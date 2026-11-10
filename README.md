@@ -1,7 +1,7 @@
 # NutriCheck
 
 ## About NutriCheck
-NutriCheck is a web-based nutrition tracking application that helps users calculate Body Mass Index (BMI), record daily food comsumption, and manage personal nutrition goals. 
+NutriCheck is a web-based nutrition tracking application that helps users calculate Body Mass Index (BMI), record daily food consumption, and manage personal nutrition goals.
 There are 2 roles in NutriCheck, which are users (for the general public) and nutritionist.
 
 ### Users
@@ -37,7 +37,7 @@ Creates or updates the user's current BMI.
 
 Contains detailed information about the user’s food intake, including breakfast, lunch, dinner, and snacks. This page calculates and summarizes the total nutritional content of the foods consumed by the user.
 
-### Food Catalouge
+### Food Catalogue
 <img width="298" height="158" alt="image" src="https://github.com/user-attachments/assets/72019358-21d6-41ef-bf6a-0802b5aba453" />
 
 A page to browse and add the user's daily food to the log page. It also acts as a food nutrition information filter. This filter can show users foods that match the nutritional content specified in the filter.
@@ -47,15 +47,23 @@ A page to browse and add the user's daily food to the log page. It also acts as 
 
 Provides articles from nutritionists. Users can read detailed information of various foods. Nutritionists may also write recipes for users to try.
 
+## Team Project & My Role
+This was a team course project at BINUS University. My teammates built the TypeScript frontend, while I designed and built the **FastAPI backend**:
+
+- **JWT authentication** with role-based access control: regular users vs nutritionists (only nutritionists can manage foods and publish articles).
+- **Password hashing** with bcrypt (salted), plus duplicate email/username validation on registration.
+- **Relational schema** using SQLAlchemy 2.0 on MySQL: 8 tables (users, nutritionists, health_profiles, nutrition_goals, articles, food_items, nutrition_logs, food_entries) with foreign keys and ORM relationships.
+- **Layered API structure**: routers separated per domain (auth, users), Pydantic schemas for request/response validation, and ORM models kept independent from endpoint logic.
+
 ## How to run it manually
 1. Clone the repository
 ```bash
-git clone https://github.com/aRandomUser1107/AOL_NutriCheck.git
+git clone https://github.com/wardalxndr/AOL_NutriCheck.git
 ```
 2. Open the project
 Navigate to the project folder:
 ```bash
-cd nutrition-project
+cd AOL_NutriCheck
 ```
 3. Run the website
 run
